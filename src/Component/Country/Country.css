@@ -1,0 +1,11 @@
+.country-info{
+    border: 1px solid lightgray;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.country-info h4{
+    margin-top: 15px;
+}
+.country-grid .flag{
+    height: 10px;
+}
