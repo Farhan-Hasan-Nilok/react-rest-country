@@ -1,27 +1,18 @@
-
-import { useEffect, useState } from 'react';
 import './App.css';
-import Country from './Component/Country/Country';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Home from './Component/Home/Home';
+import {BrowserRouter as Router, Route, Routes,} from "react-router-dom";
+import About from './Component/About/About';
 function App() {
-  const [countries, setCountries] = useState([]);
 
-  useEffect(() => {
-    fetch('https://restcountries.com/v3.1/all')
-    .then(res => res.json())
-    .then(data => {
-      setCountries(data)
-    })
-  },[])
   return (
    <div>
-    <h3 className='total'>Total Country: {countries.length}</h3>
-      <div className='country-grid'>
-      {
-          countries.map(country => <Country country={country}></Country>)
-      }
-    </div>
+     <Router>
+      <Routes>
+        <Route path = '/' element = {<Home/>}> </Route>
+        <Route path = '/about/:name' element = {<About/>}> </Route>
+      </Routes>
+     </Router>
    </div>
   );
 }
