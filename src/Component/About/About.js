@@ -14,8 +14,9 @@ const About = () => {
   }, [])
     return(
         <div>
-           <h2>Country: {name}</h2>
-           <h4>Official Name: {name.official}</h4>
+           <h4>Country: {name}</h4>
+           <h4>Official Name: {countryInfo.map(country => <p>{country.name.official}</p>)}</h4>
+            <h4>Language: {countryInfo.map(country => <p>{country.area}</p>)}</h4>
         </div>
     )
 };
